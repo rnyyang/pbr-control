@@ -6,13 +6,17 @@ RELAY = 17
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(RELAY, GPIO.OUT)
 
-# LED ON
-GPIO.output(RELAY, 0)
-print("LED ON")
+# start OFF
+GPIO.output(RELAY, 1)
+
+print("OFF")
 time.sleep(5)
 
-# LED OFF
+print("ON")
+GPIO.output(RELAY, 0)
+time.sleep(5)
+
+print("OFF")
 GPIO.output(RELAY, 1)
-print("LED OFF")
 
 GPIO.cleanup()
